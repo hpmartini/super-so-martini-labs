@@ -1,0 +1,17 @@
+.fade-text {
+    animation: fadeText 3s;
+}
+
+@keyframes fadeText {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

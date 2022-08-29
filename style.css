@@ -1,0 +1,105 @@
+.notion-collection-board {
+    display: flex;
+}
+
+.notion-header__icon-wrapper span {
+    border-radius: 50%;
+    box-shadow: 0 19px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);
+}
+
+/*-----------------------------------*/
+
+.notion-callout {
+    background: #fafafc !important;
+    border-radius: 20px !important;
+    text-align: center !important;
+    padding: 40px !important;
+    border: none !important;
+}
+
+.notion-callout .notion-callout__content {
+    margin: 0 auto !important;
+    padding: 30px;
+}
+
+.notion-callout__content .notion-callout .notion-callout__content {
+    padding: 0;
+}
+
+.notion-callout .notion-image {
+    box-shadow: #0000003b 0px 20px 40px -10px !important
+}
+
+.notion-semantic-string .link {
+    border: none;
+}
+
+.notion-collection-card {
+    transform: background .005s ease-in 0s
+}
+
+.notion-callout .notion-callout__content {
+    transform: background .005s ease-in 0s
+}
+
+.notion-callout .notion-callout__content .notion-callout:hover {
+    background: #6F97C7 !important;
+    transform: translateY(-4px) !important;
+}
+
+.notion-collection-card:hover {
+    transform: translateY(-4px) !important;
+    color: #fff !important;
+}
+
+.notion-callout h1 {
+    letter-spacing: -1.5px !important;
+    margin: 0 auto 8px !important;
+    font-size: 36px !important;
+}
+
+.notion-callout .notion-callout {
+    border-radius: 100px !important;
+    width: fit-content !important;
+    background: #32537F !important;
+    margin: 0 auto !important;
+    color: #fff !important;
+    padding: 0 !important;
+}
+
+.notion-callout .notion-callout a {
+    padding: 12px 24px !important;
+    display: block !important;
+    opacity: 1 !important;
+}
+
+@media (max-width: 600px) {
+    .notion-callout {
+        padding: 24px !important;
+    }
+
+    .notion-callout .notion-heading {
+        letter-spacing: -1px !important;
+        font-size: 24px !important;
+    }
+
+    .notion-collection-board {
+        flex-direction: column;
+    }
+}
+
+.notion-image {
+    border-radius: 50px;
+}
+
+.pill-default {
+    font-size: 1.2rem;
+    background: none;
+}
+
+.notion-collection-board {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    overflow: hidden
+}
