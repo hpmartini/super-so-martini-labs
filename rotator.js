@@ -1,44 +1,46 @@
-const initialText = document
-  .getElementsByClassName('notion-callout__content')[0]
-  .getElementsByTagName('h1')[0]
-  .getElementsByTagName('strong')[0]
-  .innerHTML
-const firstWord = initialText.split(' ')[0]
+const header = document
+.getElementsByClassName('notion-callout__content')[0]
+.getElementsByTagName('h1')[0]
+.getElementsByTagName('strong')[0]
 
-let rotatorReference = document
-  .getElementsByClassName('notion-callout__content')[0]
-  .getElementsByTagName('h1')[0]
-  .getElementsByTagName('strong')[0]
-
-const rotatorWord = document.createElement('span')
-rotatorWord.innerHTML = 'placeholder'
-
-rotatorReference.appendChild(rotatorWord)
+const rotator = header.appendChild(document.createElement('span'))
 
 const words = [
-  'test 1',
-  'test 2',
-  'test 3',
-  //'IT-Berater', 
-  //'Softwarearchitekt', 
-  //'Full-Stack-Entwickler', 
-  //'Experte für Digitalisierung',
-  //'Experte für Single-Page-Applications'
+'IT-Berater', 
+'Softwarearchitekt', 
+'Full-Stack-Entwickler', 
 ];
 
-const timer = (timout) => new Promise(resolve => 
-  setTimeout(resolve, timout));
+words.forEach((word, index) => {
+const span = document.createElement('span')
+rotator.appendChild(span)
+span.classList.add('rotator')
+if (index > 0) span.classList.add('hide')
+span.innerHTML = word
+})
+
+const sleep = (timout) => new Promise(resolve => 
+setTimeout(resolve, timout));
+const children = Array.from(rotator.children)
+let firstRun = true;
 
 const rotate = async () => {
-  while (true) {
-    for (word of words) {
-      rotatorWord.innerHTML = word
-      rotatorWord.classList.toggle('fade-text')
-      await timer(3000)
-      rotatorWord.classList.toggle('fade-text')
-      await timer(1)
-    }
+while (true) {
+  for ([index, child] of children.entries()) {
+    child.classList.add('show')
+    child.classList.remove('hide')
+    await sleep(10)
+    
+    child.classList.add('fade-in')
+    await sleep(2000)
+    
+    child.classList.remove('fade-in')
+    
+    await sleep(500)
+    child.classList.add('hide')
+    child.classList.remove('show')
   }
+}
 }
 
 rotate()
